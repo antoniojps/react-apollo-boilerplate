@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable import/order */
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+// styles
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from './GlobalStyle';
+import theme from './services/theme.semantic';
+
+// components
+import Router from 'routes/Router';
+
+// apollo
+import apolloClient from './services/apolloClient';
+import { ApolloProvider } from 'react-apollo';
+
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <ApolloProvider client={apolloClient}>
+      <>
+        <Router />
+        <GlobalStyle />
+      </>
+    </ApolloProvider>
+  </ThemeProvider>
+);
 
 export default App;
