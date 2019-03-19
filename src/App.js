@@ -6,12 +6,12 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import theme from './services/theme.semantic';
 
-// components
-import Router from 'routes/Router';
-
 // apollo
 import apolloClient from './services/apolloClient';
 import { ApolloProvider } from 'react-apollo';
+
+// components
+import Router from 'routes/Router';
 
 const App = () => (
   <ThemeProvider theme={theme}>

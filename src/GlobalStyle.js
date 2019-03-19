@@ -11,8 +11,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-´
-  html,body {
+´ html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  html, body {
     font-family: ${props => props.theme.type
     .base}, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     -webkit-font-smoothing: antialiased;
@@ -24,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.colors.white};
   }
 
+  #root {
+    height: 100%;
+    width: 100%;
+  }
   `;
 
 export default GlobalStyle;
